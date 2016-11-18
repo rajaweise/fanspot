@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Black Jeezus Idol Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        /*positioning*/
+            .center {
+                margin: auto;
+            }
+            .container {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+            }
+            .bottomRight {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            .bottom {
+                position: absolute;
+                bottom: 0;
+            }
+            .topRight {
+                position: absolute;
+                top: 0;
+                Right: 0;
+            }
+            .topLeft {
+                position: absolute;
+                top: 0;
+                Left: 0;
+            }
+            .top {
+                position: absolute;
+                top: 10px;
+            }
+            .inline {
+                display: inline;
+            }
+            .floatLeft {
+               float: left;
+            }
+            .floatRight {
+                float: right;
+            }
+            .clearLeft {
+                clear: left;
+            }
+            .clearRight {
+                clear: Right;
+            }
+        /*layout*/
+            .noPadding {
+                padding: 0px;
+            }
+            .noTopOrBottomMargin {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        /*themes*/
+            .textStandard {
+                font-size: 1.3em;
+                font-family: sans-serif;
+            }
+            .textCenter {
+                text-align: center;
+            }
+            .goldFont {
+                color: #fffc4d;
+            }
+            .textUnderline {
+                text-decoration: underline;
+            }
+            .roundBorders {
+                border-radius: 6px;
+            }
+        /*elements*/
+            body {
+                background-color: #f5f9f9;
+            }
+            main {
+                width: 68.19%;
+                background-color: #d0d9f9;
+                min-height: 1000px;
+            }
+            .createAnIdolContents {
+                width: 92.29%;
+                background-color: #d0d0d0;
+                padding: 8px;
+                border: 0.5px solid black;
+            }
+        /*modules*/
+        .topFansTitle {
+            font-size: 2em;
+            width: 100%;
+        }
+        .topFansTable tr td {
+            column-width: 60px;
+        }
+        .topFansTable tr td:nth-child(1) {
+            column-width: 30px;
+        }
+        .button {
+            background-color: #dfe5ed;
+            border: 0.5px solid #85898e;
+            width: 100%;
+            min-height: 46px;
+            font-size: 1.2em;
+        }
+        .uploadButton {
+            background-color: #dfe5ed;
+            border: 0.5px solid #85898e;
+            min-height: 20px;
+            font-size: 1.2em;
+        }
+        .button:hover {background-color: #ddd;}
+        .unorderedList {
+            list-style-type: none;
+        }
+        </style>
+    </head>
+    <body class="noPadding noTopOrBottomMargin textStandard">
+        <main class="center noTopOrBottomMargin">
+            <div class="container noTopOrBottomMargin roundBorders createAnIdolContents">
+                        <h1>
+                            Create an Idol
+                        </h1>
+                        <ul class="unorderedList">
+                            <li class="idolName">
+                                Idol Name: <input type="text">
+                            </li>
+                            <li class="idolName">
+                                Idol url (must be unique): <input type="text">
+                            </li>
+                            <li>
+                                *Price to become a fan: $<input type="number">
+                            </li>
+                            <li>
+                                *Price to get the 321Deal: $<input type="number">
+                            </li>
+                            <li>
+                                Idol Banner Picture: 
+                                <button type="submit" class="roundBorders uploadButton">
+                                    Upload a Picture
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="Submit noPadding inline floatRight">
+                            <button type="submit" class="inline roundBorders button submitButton">
+                                Create Idol
+                            </button>
+                        </div>
+            </div>
+        </main>
+    </body>
+</html>

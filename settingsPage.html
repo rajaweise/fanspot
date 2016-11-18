@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Settings Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        /*positioning*/
+            .center {
+                margin: auto;
+            }
+            .container {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+            }
+            .bottomRight {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            .bottom {
+                position: absolute;
+                bottom: 0;
+            }
+            .topRight {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            .topLeft {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .top {
+                position: absolute;
+                top: 10px;
+            }
+            .inline {
+                display: inline;
+            }
+            .floatLeft {
+               float: left;
+            }
+            .floatRight {
+                float: right;
+            }
+            .clearLeft {
+                clear: left;
+            }
+            .clearRight {
+                clear: Right;
+            }
+        /*layout*/
+            .noPadding {
+                padding: 0px;
+            }
+            .noTopOrBottomMargin {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        /*themes*/
+            .textStandard {
+                font-size: 1.3em;
+                font-family: sans-serif;
+            }
+            .textCenter {
+                text-align: center;
+            }
+            .goldFont {
+                color: #fffc4d;
+            }
+            .textUnderline {
+                text-decoration: underline;
+            }
+            .roundBorders {
+                border-radius: 6px;
+            }
+        /*elements*/
+            main {
+                width: 93.2%;
+                min-width: 400px;
+            }
+            body {
+                background-color: #f5f9f9;
+                min-width: 400px;
+            }
+            .settingsContent {
+                width: 68.19%;
+                background-color: #d0d9f9;
+                min-height: 1000px;
+                min-width: 210px;
+                float: left;
+                display: inline;
+                padding-left: 10px;
+            }
+            aside {
+                min-height: 1000px;
+                width: 15.91%;
+                min-width: 122px;
+                background-color: rgba(165, 228, 243, 0.4);
+                margin-bottom: 20px;
+                margin-left: 60px;
+                border: 1px solid #fffc4d;
+                border-left: none;
+            }
+            .game {
+                width: 92.29%;
+                background-color: blue;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                padding: 8px;
+                border: 0.5px solid black;
+            }
+            .pastGame {
+                background-color: #999999;
+            }
+        /*modules*/
+            .button {
+                background-color: #dfe5ed;
+                border: 0.5px solid #85898e;
+                min-height: 46px;
+                font-size: 1.2em;
+            }
+            .button:hover {background-color: #ddd;}
+            .newGamesSection {
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+            .pastGamesSection {
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+            .game ul {
+                list-style-type: none;
+            }
+        /*list styling*/
+            .tab {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            .tab li {
+                float: left;
+            }
+            .tab li a:hover {
+                color: #fffc4d;
+                background-color: #d0d0d0;
+            }
+            .tab li a {
+                display: inline-block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                transition: 0.3s;
+                max-width: 200px;
+                width: 200px;
+                min-width: 100%;
+                text-align: left;
+            }
+            .tabContent {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
+            }
+
+            @-webkit-keyframes fadeEffect {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+
+            @keyframes fadeEffect {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+        </style>
+        <script>
+            /* Open Game Tabs*/
+            function openGames(evt, gameType) {
+                var i, tabContent, tabLinks;
+                tabContent = document.getElementsByClassName("tabContent");
+                for (i = 0; i < tabContent.length; i++) {
+                    tabContent[i].style.display = "none";
+                }
+                 tabLinks = document.getElementsByClassName("tabLinks");
+                for (i = 0; i < tabLinks.length; i++) {
+                    tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+                }
+                document.getElementById(gameType).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </head>
+    <body class="noPadding noTopOrBottomMargin textStandard">
+        <main class="center container">
+            <aside class="floatLeft container settingsMenuSection">
+                <h2 class="textCenter">
+                    Settings Menu
+                </h2>
+                <ul class="tab settingsMenu">
+                        <li>
+                            <a href="#" class="tablinks pastEntriesTab" onclick="openGames(event, 'pastEntriesSection')">
+                                Past Entries
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tablinks loginInfoTab" onclick="openGames(event, 'loginInfoSection')">
+                                Login info
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tablinks myIdolsTab" onclick="openGames(event, 'myIdolsSection')">
+                                My Idols
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tablinks paymentDetailsTab" onclick="openGames(event, 'paymentDetailsSection')">
+                                Payment Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tablinks personalInfoTab" onclick="openGames(event, 'personalInfoSection')">
+                                Personal Info
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="tablinks winsTab" onclick="openGames(event, 'winsSection')">
+                                Wins
+                            </a>
+                        </li>
+                    </ul>
+            </aside>
+            <div class="container noTopOrBottomMargin settingsContent">
+                    <div id="pastEntriesSection" class="tabContent pastEntriesSection">
+                        <h2>
+                        Past entries
+                    </h2>
+                   <div class="container roundBorders game pastGame game3">
+                        <ul class="floatRight gameDetails">
+                            <li class="reward">
+                                reward
+                            </li>
+                            <li class="ends">
+                                ended
+                            </li>
+                        </ul>
+                        <h2 class="gameTitle">
+                            Game Title
+                        </h2>
+                        <p class="description">
+                            Picture Submissions. This is a short description of the game.
+                        </p>
+                        <h3 class="inline entries">
+                            Entries
+                        </h3>
+                        <a href="" class="inline"> All entries</a>
+                        <div class="PictureEntry11">
+                            <p>
+                                Picture submissions go here.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="loginInfoSection" class="tabContent loginInfoSection">
+                    <h2>
+                        Login Info
+                    </h2>
+                </div>
+                <div id="myIdolsSection" class="tabContent myIdolsSection">
+                    <h2>
+                        My Idols
+                    </h2>
+                </div>
+                <div id="paymentDetailsSection" class="tabContent paymentDetailsSection">
+                    <h2>
+                        Payment Details
+                    </h2>
+                </div>
+                <div id="personalInfoSection" class="tabContent personalInfoSection">
+                    <h2>
+                        Personal Info
+                    </h2>
+                </div>
+                <div id="winsSection" class="tabContent winsSection">
+                    <h2>
+                        Wins
+                    </h2>
+                    <h3>
+                        Total Wins: 0
+                    </h3>
+                    <h3>
+                        Past Wins
+                    </h3>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

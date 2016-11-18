@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Entries Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        /*positioning*/
+            .center {
+                margin: auto;
+            }
+            .container {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+            }
+            .bottomRight {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            .bottom {
+                position: absolute;
+                bottom: 0;
+            }
+            .topRight {
+                position: absolute;
+                top: 0;
+                Right: 0;
+            }
+            .topLeft {
+                position: absolute;
+                top: 0;
+                Left: 0;
+            }
+            .top {
+                position: absolute;
+                top: 10px;
+            }
+            .block {
+                display: block;
+            }
+            .inline {
+                display: inline;
+            }
+            .inlineBlock {
+                display: inline-block;
+            }
+            .floatLeft {
+               float: left;
+            }
+            .floatRight {
+                float: right;
+            }
+            .clearLeft {
+                clear: left;
+            }
+            .clearRight {
+                clear: Right;
+            }
+        /*layout*/
+            .noPadding {
+                padding: 0px;
+            }
+            .noTopOrBottomMargin {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .noMargin {
+                margin: 0;
+            }
+        /*themes*/
+            .textStandard {
+                font-size: 1.2em;
+                font-family: Tahoma, Geneva, sans-serif;
+            }
+            .textCenter {
+                text-align: center;
+            }
+            .goldFont {
+                color: #fffc4d;
+            }
+            .textUnderline {
+                text-decoration: underline;
+            }
+            .roundBorders {
+                border-radius: 6px;
+            }
+            .hoverSectionStyle {
+                width: 27.68%;
+                min-width: 200px;
+                background-color: rgba(165, 228, 243, 0.4);
+                margin-bottom: 20px;
+                border: 1px solid #fffc4d;
+            }
+            .centerText {
+                text-align: center;
+                display: inline;
+            }
+        /*elements*/
+            body {
+                background-color: #f5f9f9;
+            }
+            .topFansSection {
+                width: 68.19%;
+                min-width:300px;
+                min-height: 1000px;
+                height: 100%;
+                background-color: #d0d9f9;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+            .gameInformationSection {
+                margin: 10px;
+                margin-top: 5px;
+            }
+            .gameEntry {
+                width: 92.29%;
+                background-color: #999999;
+                padding: 8px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .game {
+                width: 92.29%;
+                background-color: blue;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                padding: 8px;
+                border: 0.5px solid black;
+            }
+        /*modules*/
+        .unorderedList {
+            list-style-type: none;
+        }
+        .fanspotInformationDetailsSection {
+            background-color: #dfe5ed;
+            width: 220px;
+            height: 200px;
+            border: 0.5px solid #85898e;
+            margin-top: 6px;
+            text-align: center;
+        }
+        .fanspotInformationDetailsSection:hover {background-color: #ddd;}
+        .button {
+            background-color: #dfe5ed;
+            border: 0.5px solid #85898e;
+            min-height: 46px;
+            font-size: 1.2em;
+        }
+        .button:hover {background-color: #ddd;}
+        .game ul {
+            list-style-type: none;
+        }
+        .input {
+            width: 100px;
+        }
+        .idolBackground {
+            background-image: url("blackJeezusPhoto.jpg");
+            background-size: 100% 593px;
+            height: 200px;
+        }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body class="noPadding noTopOrBottomMargin textStandard">
+            <div class="center container noTopOrBottomMargin noPadding topFansSection">
+                <h1 class="goldFont noTopOrBottomMargin noPadding idolBackground idolName">
+                    Idol Name
+                </h1>
+                <div class="container noTopOrBottomMargin gameInformationSection">
+                    <div class="inline floatRight">
+                        <input type="text" class="roundBorders">
+                        <input type="submit" class="searchButton" value="Search Entries">
+                    </div>
+                    <input type="submit" class="bottomRight roundBorders button" value="Enter Game">
+                    <h2>
+                        Game Title Entries
+                    </h2>
+                    <ul class="unorderedList gameDetailsList">
+                        <li>
+                           reward: 
+                        </li>
+                        <li>
+                           details:
+                        </li>
+                        <li>
+                           ends:
+                        </li>
+                    </ul>
+                </div>
+                <div class="center container roundBorders gameEntriesSection">
+                    <ul class="center unorderedList">
+                        <li>
+                            <div class="center roundBorders gameEntry">
+                                <h2>
+                                    fan name goes here
+                                </h2>
+                                <p>
+                                    Entry goes here
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </body>
+</html>

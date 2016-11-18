@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Entries Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        /*positioning*/
+            .center {
+                margin: auto;
+            }
+            .container {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+            }
+            .bottomRight {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            .bottom {
+                position: absolute;
+                bottom: 0;
+            }
+            .topRight {
+                position: absolute;
+                top: 0;
+                Right: 0;
+            }
+            .topLeft {
+                position: absolute;
+                top: 0;
+                Left: 0;
+            }
+            .top {
+                position: absolute;
+                top: 10px;
+            }
+            .block {
+                display: block;
+            }
+            .inline {
+                display: inline;
+            }
+            .inlineBlock {
+                display: inline-block;
+            }
+            .floatLeft {
+               float: left;
+            }
+            .floatRight {
+                float: right;
+            }
+            .clearLeft {
+                clear: left;
+            }
+            .clearRight {
+                clear: Right;
+            }
+        /*layout*/
+            .noPadding {
+                padding: 0px;
+            }
+            .noTopOrBottomMargin {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .noMargin {
+                margin: 0;
+            }
+        /*themes*/
+            .textStandard {
+                font-size: 1.2em;
+                font-family: Tahoma, Geneva, sans-serif;
+            }
+            .textCenter {
+                text-align: center;
+            }
+            .goldFont {
+                color: #fffc4d;
+            }
+            .textUnderline {
+                text-decoration: underline;
+            }
+            .roundBorders {
+                border-radius: 6px;
+            }
+            .hoverSectionStyle {
+                width: 27.68%;
+                min-width: 200px;
+                background-color: rgba(165, 228, 243, 0.4);
+                margin-bottom: 20px;
+                border: 1px solid #fffc4d;
+            }
+            .centerText {
+                text-align: center;
+                display: inline;
+            }
+        /*elements*/
+            body {
+                background-color: #f5f9f9;
+            }
+            .topFansSection {
+                width: 68.19%;
+                min-width:300px;
+                min-height: 1000px;
+                height: 100%;
+                background-color: #d0d9f9;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+            .topFansMenu {
+                padding: 10px;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            .topFansTable {
+                width: 100%;
+                padding-left: 15%;
+            }
+            .topFansTable tr {
+                height: 40px;
+            }
+            .gameInformationSection {
+                margin-bottom: 40px;
+                padding: 8px;
+            }
+            .gameEntry {
+                width: 92.29%;
+                background-color: #999999;
+                padding: 8px;
+                margin-bottom: 10px;
+            }
+            .game {
+                width: 92.29%;
+                background-color: blue;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                padding: 8px;
+                border: 0.5px solid black;
+            }
+            .winningGame {
+                background-color: #d0d0d0;
+            }
+        /*modules*/
+        .unorderedList {
+            list-style-type: none;
+        }
+        .fanspotInformationDetailsSection {
+            background-color: #dfe5ed;
+            width: 220px;
+            height: 200px;
+            border: 0.5px solid #85898e;
+            margin-top: 6px;
+            text-align: center;
+        }
+        .fanspotInformationDetailsSection:hover {background-color: #ddd;}
+        .button {
+            background-color: #dfe5ed;
+            border: 0.5px solid #85898e;
+            min-height: 46px;
+            font-size: 1.2em;
+        }
+        .button:hover {background-color: #ddd;}
+        .game ul {
+            list-style-type: none;
+        }
+        .input {
+            width: 100px;
+        }
+        .idolBackground {
+            background-image: url("blackJeezusPhoto.jpg");
+            background-size: 100% 593px;
+            height: 200px;
+        }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body class="noPadding noTopOrBottomMargin textStandard">
+            <div class="center container noTopOrBottomMargin noPadding topFansSection">
+                <h1 class="goldFont noTopOrBottomMargin noPadding idolBackground idolName">
+                    Idol Name's Top Fans
+                </h1>
+                <div class="container noTopOrBottomMargin topFansMenu">
+                    <div class="inline floatRight">
+                        <input type="text" class="roundBorders">
+                        <input type="submit" class="searchButton" value="Search Fans">
+                    </div>
+                    <input type="submit" class="floatLeft roundBorders button" value="Become a Fan">
+                </div>
+                <table class="center noTopOrBottomMargin topFansTable">
+                        <tr>
+                            <th class="position"></th>
+                            <th class="username"></th>
+                            <th class="fanpoints"></th>
+                        </tr>
+                        <tr>
+                            <td class="position1">
+                                1
+                            </td>
+                            <td class="username1">
+                                topfan
+                            </td>
+                            <td class="fanpoints1">
+                                25312
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position2">
+                                2
+                            </td>
+                            <td class="username2">
+                                topfan2
+                            </td>
+                            <td class="fanpoints2">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position3">
+                                3
+                            </td>
+                            <td class="username3">
+                                topfan3
+                            </td>
+                            <td class="fanpoints3">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position4">
+                                4
+                            </td>
+                            <td class="username4">
+                                topfan4
+                            </td>
+                            <td class="fanpoints4">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position5">
+                                5
+                            </td>
+                            <td class="username5">
+                                topfan5
+                            </td>
+                            <td class="fanpoints5">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position6">
+                                6
+                            </td>
+                            <td class="username6">
+                                topfan6
+                            </td>
+                            <td class="fanpoints6">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position7">
+                                7
+                            </td>
+                            <td class="username7">
+                                topfan7
+                            </td>
+                            <td class="fanpoints7">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position8">
+                                8
+                            </td>
+                            <td class="username8">
+                                topfan6
+                            </td>
+                            <td class="fanpoints8">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position9">
+                                9
+                            </td>
+                            <td class="username9">
+                                topfan6
+                            </td>
+                            <td class="fanpoints9">
+                                42132
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="position10">
+                                10
+                            </td>
+                            <td class="username10">
+                                topfan6
+                            </td>
+                            <td class="fanpoints10">
+                                42132
+                            </td>
+                        </tr>
+                </table>
+            </div>
+    </body>
+</html>

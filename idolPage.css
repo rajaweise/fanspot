@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                
+                background-color: #f5f9f9;
+           
+            main {
+                background-image: url("pictures/blackJeezusPhoto.jpeg");
+            }
+            .idolContent {
+                background-color: #e5f4f4;
+            }
+            aside {
+                
+            }
+            .bottomLeft {
+                
+            }
+            
+            .idolName {
+
+            }
+            .topFansTitle {
+
+            }
+            .topFansTable {
+
+            }
+            .totalFans {
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1 class="idolName">
+                Idol Name
+            </h1>
+            <aside>
+                <h2 class="topFansTitle">
+                    Top Fans
+                </h2>
+                <table class="topFansTable">
+                    <tr>
+                        <th class="position"></th>
+                        <th class="username"></th>
+                        <th class="fanpoints"></th>
+                    </tr>
+                    <tr>
+                        <td class="position1">
+                            
+                        </td>
+                        <td class="username1">
+                            
+                        </td>
+                        <td class="fanpoints1">
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                <h2 class="totalFans bottomLeft">
+                    Total Fans: 
+                </h2>
+            </aside>
+        </main>
+        <div class="idolContent">
+            <div class="becomeAFan">
+                <p>
+                    +<a href="">
+                        Become a Fan
+                    </a>
+                </p>
+            <div class="get321Deal">
+                <p>
+                    +<a href="">
+                        Get the 321Deal
+                    </a>
+                </p>
+            </div>
+            <div class="upComingGamesSection">
+                <h3 class="upcomingGames">
+                    Upcoming Games
+                </h3>
+                <div class="game1">
+                    <h2 class="gameTitle">
+                        Game Title
+                    </h2>
+                    <ul>
+                        <li class="reward">
+
+                        </li>
+                        <li class="entryFee">
+
+                        </li>
+                        <li class="ends">
+
+                        </li>
+                    </ul>
+                    <p class="description">
+
+                    </p>
+                    <h3 class="entries">
+                        Entries
+                    </h3>
+                    <a href=""> All entries</a>
+                    <div class="soundEntry11">
+                        <a class="playButton11">
+
+                        </a>
+                        <p class="entryTitle11"></p>
+                    </div>
+                    <div class="soundEntry12">
+                        <a class="playButton12">
+
+                        </a>
+                        <p class="entryTitle12"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="pastGamesSection">
+                <h3 class="pastGames">
+                    Past Games
+                </h3>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fanspot Home Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        /*positioning*/
+            .center {
+                margin: auto;
+            }
+            .container {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+            }
+            .bottomRight {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            .bottom {
+                position: absolute;
+                bottom: 0;
+            }
+            .topRight {
+                position: absolute;
+                top: 0;
+                Right: 0;
+            }
+            .topLeft {
+                position: absolute;
+                top: 0;
+                Left: 0;
+            }
+            .top {
+                position: absolute;
+                top: 10px;
+            }
+            .block {
+                display: block;
+            }
+            .inline {
+                display: inline;
+            }
+            .inlineBlock {
+                display: inline-block;
+            }
+            .floatLeft {
+               float: left;
+            }
+            .floatRight {
+                float: right;
+            }
+            .clearLeft {
+                clear: left;
+            }
+            .clearRight {
+                clear: Right;
+            }
+        /*layout*/
+            .noPadding {
+                padding: 0px;
+            }
+            .noTopOrBottomMargin {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            .noMargin {
+                margin: 0;
+            }
+        /*themes*/
+            .textStandard {
+                font-size: 1.2em;
+                font-family: Tahoma, Geneva, sans-serif;
+            }
+            .textCenter {
+                text-align: center;
+            }
+            .goldFont {
+                color: #fffc4d;
+            }
+            .textUnderline {
+                text-decoration: underline;
+            }
+            .roundBorders {
+                border-radius: 6px;
+            }
+            .hoverSectionStyle {
+                width: 27.68%;
+                min-width: 200px;
+                background-color: rgba(165, 228, 243, 0.4);
+                margin-bottom: 20px;
+                border: 1px solid #fffc4d;
+            }
+            .centerText {
+                text-align: center;
+                display: inline;
+            }
+        /*elements*/
+            body {
+                background-color: #f5f9f9;
+            }
+            .header {
+                background-color: background;
+                width: 68.19%;
+                min-width:300px;
+                height: 30px;
+            }
+            .header * {
+                display: inline-block;
+                margin: 0;
+                
+            }
+            main {
+                width: 68.19%;
+                min-width:300px;
+                min-height: 430px;
+                height: inherit;
+                background-image: url("blackJeezusPhoto.jpg");
+                background-size: 100% 100%;
+                border-bottom: 1px solid #fffc4d;
+            }
+            .landingPageContent {
+                width: 68.19%;
+                min-width:300px;
+                background-color: #d0d9f9;
+            }
+            .signUpSection {
+                width: 120px;
+            }
+            aside {
+                width: 27.68%;
+                min-width: 200px;
+                height: 32%;
+                background-color: rgba(165, 228, 243, 0.4);
+                margin-bottom: 20px;
+                border: 1px solid #fffc4d;
+                border-left: none;
+            }
+            .idolMarketplace {
+                width: 82.58%;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .winningGamesSection {
+                width: 92.29%;
+                background-color: #999999;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+            
+            .game {
+                width: 92.29%;
+                background-color: blue;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                padding: 8px;
+                border: 0.5px solid black;
+            }
+            .winningGame {
+                background-color: #d0d0d0;
+            }
+        /*modules*/
+        .topFansTitle {
+            font-size: 2em;
+            width: 100%;
+        }
+        .topFansTable tr td {
+            column-width: 60px;
+        }
+        .topFansTable tr td:nth-child(1) {
+            column-width: 30px;
+        }
+        .unorderedList {
+            list-style-type: none;
+        }
+        .fanspotInformationDetailsSection {
+            background-color: #dfe5ed;
+            width: 220px;
+            height: 200px;
+            border: 0.5px solid #85898e;
+            margin-top: 6px;
+            text-align: center;
+        }
+        .fanspotInformationDetailsSection:hover {background-color: #ddd;}
+        .button {
+            background-color: #dfe5ed;
+            border: 0.5px solid #85898e;
+            width: 100%;
+            min-height: 46px;
+            font-size: 1.2em;
+        }
+        .button:hover {background-color: #ddd;}
+        .pastGamesSection {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+        .game ul {
+            list-style-type: none;
+        }
+        .input {
+            width: 100px;
+        }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+        </script>
+        <script type = "text/javascript">
+        $(function(){
+                $('.submitLogin').click(function(event){
+                    event.preventDefault();
+                    var emailLogin = $('.emailLogin').val();
+                    var passwordLogin = $('.passwordLogin').val();
+                    $.post("login.php",
+                    {
+                        'userEmail': emailLogin,
+                        'userPassword': passwordLogin
+                    },
+                    function(data) {
+                        if (data.result === true) {
+                            var userTag = data.username;
+                            function setCookie(cName, cValue, exdays) {
+                                var d = new Date();
+                                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                                var expires = "expires="+ d.toUTCString();
+                                document.cookie = cName + "=" + cValue + ";" + expires + ";path=/";
+                            }
+                            function deleteAllCookies() {
+                                var cookies = document.cookie.split(";");
+
+                                for (var i = 0; i < cookies.length; i++) {
+                                    var cookie = cookies[i];
+                                    var eqPos = cookie.indexOf("=");
+                                    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT" + ";path=/";
+                                }
+                            }
+                            deleteAllCookies();
+                            setCookie('cUserTag', userTag, 1);
+                            window.location.href = 'homepageRegisteredUser.html';
+                        } else {
+                            window.location.href = 'createIdolPage.html';
+                        }
+                    }, "json");
+                });
+    });
+        </script>
+    </head>
+    <body class="noPadding noTopOrBottomMargin textStandard">
+        <header class="center noTopOrBottomMargin noPadding header">
+            <p>
+                search:
+            </p>
+            <input type="text">
+            <div class="floatRight smallText loginSection">
+                <form method="POST">
+                <p>
+                    email:
+                </p>
+                <input type="text" class="emailLogin">
+                <p>  
+                    password:
+                </p>
+                <input type="text" class="passwordLogin">
+                <input type="submit" value="login" class="submitLogin">
+                </form>
+            </div>
+        </header>
+        <main class="idolMain container goldFont noPadding noTopOrBottomMargin">
+            <div class="floatRight noTopOrBottomMargin noPadding signUpSection">
+                <form class="container noTopOrBottomMargin noPadding hoverSectionStyle signUpForm">
+                    <h2 class="center noTopOrBottomMargin">
+                    Sign Up
+                    </h2>
+                    <ul class="center noTopOrBottomMargin noPadding unOrderedList signUpDetails">
+                        <li>
+                            username<input class="block roundBorders input username" type="text">
+                        </li>
+                        <li>
+                            password<input class="block roundBorders input password" type="password">
+                        </li>
+                        <li>
+                            email<input class="block roundBorders input email" type="email">
+                        </li>
+                        <li>
+                            <input type="submit" value="sign up">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <h1 class="noTopOrBottomMargin idolName">
+                Idol&nbsp;Name
+            </h1>
+            <aside class="topFans floatLeft hoverSectionStyle goldBorder">
+                <h2 class="noPadding noTopOrBottomMargin textCenter textUnderline topFansTitle">
+                    Top Fans
+                </h2>
+                <table class="center noTopOrBottomMargin topFansTable">
+                    <tr>
+                        <th class="position"></th>
+                        <th class="username"></th>
+                        <th class="fanpoints"></th>
+                    </tr>
+                    <tr>
+                        <td class="position1">
+                            1
+                        </td>
+                        <td class="username1">
+                            topfan
+                        </td>
+                        <td class="fanpoints1">
+                            25312
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position2">
+                            2
+                        </td>
+                        <td class="username2">
+                            topfan2
+                        </td>
+                        <td class="fanpoints2">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position3">
+                            3
+                        </td>
+                        <td class="username3">
+                            topfan3
+                        </td>
+                        <td class="fanpoints3">
+                            42132
+                        </td>
+                    </tr>
+                </table>
+            </aside>
+            <div class="noTopOrBottomMargin introText youCanBeText block">
+                <h1>
+                    You&nbsp;can&nbsp;be
+                </h1>
+            </div>
+            <div class="noTopoOrBottomMargin center centerText introText aTopText">
+                <h1>
+                    A&nbsp;Top&nbsp;Fan/Idol
+                </h1>
+            </div>
+            <h4 class="totalFans bottomRight noTopOrBottomMargin">
+                Total Fans: 
+            </h4>
+        </main>
+        <div class="landingPageContent container noTopOrBottomMargin">
+            <div class="container center idolMarketplace">
+                <div class="floatLeft noPadding becomeAFan">
+                    <button type="button" class="inline button roundBorders becomeAFanButton">
+                    +Become a Fan
+                    </button>
+                </div>
+                <div class="get321Deal noPadding floatRight">
+                    <button type="button" class="inline button roundBorders GetThe321DealButton">
+                        +Get the 321Deal
+                    </button>
+                </div>
+            </div>
+            <ul class="center unorderedList fanspotInformation">
+                <li class="center inlineBlock roundBorders fanspotInformationDetailsSection playGamesInformation">
+                    <h3>
+                        Play Games
+                    </h3>
+                    <p>
+                        Idols Make Them
+                    </p>
+                    <p>
+                        Fans Play Them
+                    </p>
+                </li>
+                <li class="center inlineBlock roundBorders fanspotInformationDetailsSection getPaidInformation">
+                    <h3>
+                       Get Paid
+                    </h3>
+                    <p>
+                        Idols make money
+                    </p>
+                    <p>
+                        Fans make money
+                    </p>
+                </li>
+                <li class="center inlineBlock roundBorders fanspotInformationDetailsSection becomeATopFanInformation">
+                    <h3>
+                        Become a Top Fan
+                    </h3>
+                    <p>
+                        Fans win Fanpoints
+                    </p>
+                    <p>
+                        Top Fans get rewards
+                    </p>
+                </li>
+                <li class="center inlineBlock roundBorders fanspotInformationDetailsSection signUpInformation">
+                    <h3>
+                        Sign Up For Free
+                    </h3>
+                    <p>
+                        Free to be a User
+                    </p>
+                    <p>
+                        Free to be an Idol
+                    </p>
+                </li>
+            </ul>
+            <div class="center container gamesSection">
+                <h2>
+                    Game Winners
+                </h2>
+                <div class="center roundBorders winningGamesSection">
+                    <div class="container roundBorders game winningGame game3">
+                        <ul class="floatRight gameDetails">
+                            <li class="reward">
+                                reward
+                            </li>
+                            <li class="ends">
+                                ended
+                            </li>
+                        </ul>
+                        <h2 class="gameTitle">
+                            Game Title
+                        </h2>
+                        <p class="description">
+                            Picture Submissions. This is a short description of the game.
+                        </p>
+                        <h3 class="inline entries">
+                            Entries
+                        </h3>
+                        <a href="" class="inline"> All entries</a>
+                        <div class="PictureEntry11">
+                            <p>
+                                Picture submissions go here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

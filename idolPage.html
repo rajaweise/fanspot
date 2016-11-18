@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Black Jeezus Idol Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        /*positioning*/
+            .center {
+                margin: auto;
+            }
+            .container {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+            }
+            .bottomRight {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            .bottom {
+                position: absolute;
+                bottom: 0;
+            }
+            .topRight {
+                position: absolute;
+                top: 0;
+                Right: 0;
+            }
+            .topLeft {
+                position: absolute;
+                top: 0;
+                Left: 0;
+            }
+            .top {
+                position: absolute;
+                top: 10px;
+            }
+            .inline {
+                display: inline;
+            }
+            .floatLeft {
+               float: left;
+            }
+            .floatRight {
+                float: right;
+            }
+            .clearLeft {
+                clear: left;
+            }
+            .clearRight {
+                clear: Right;
+            }
+        /*layout*/
+            .noPadding {
+                padding: 0px;
+            }
+            .noTopOrBottomMargin {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        /*themes*/
+            .textStandard {
+                font-size: 1.3em;
+                font-family: sans-serif;
+            }
+            .textCenter {
+                text-align: center;
+            }
+            .goldFont {
+                color: #fffc4d;
+            }
+            .textUnderline {
+                text-decoration: underline;
+            }
+            .roundBorders {
+                border-radius: 6px;
+            }
+        /*elements*/
+            body {
+                background-color: #f5f9f9;
+            }
+            main {
+                width: 68.19%;
+                height: 430px;
+                background-image: url("blackJeezusPhoto.jpg");
+                background-size: 100% 593px;
+                border-bottom: 1px solid #fffc4d;
+            }
+            .idolContent {
+                width: 68.19%;
+                background-color: #d0d9f9;
+            }
+            aside {
+                width: 27.68%;
+                min-width: 200px;
+                height: 80%;
+                background-color: rgba(165, 228, 243, 0.4);
+                margin-bottom: 20px;
+                border: 1px solid #fffc4d;
+                border-left: none;
+            }
+            .idolMarketplace {
+                width: 82.58%;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .gamesSection {
+                width: 92.29%;
+            }
+            .newGamesSection {
+                width: 100%;
+                background-color: #999999;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+            .pastGamesSection {
+                width: 100%;
+                background-color: #d0d0d0;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                display: none;
+            }
+            .game {
+                width: 92.29%;
+                background-color: blue;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                padding: 8px;
+                border: 0.5px solid black;
+            }
+            .newGame {
+                background-color: #d0d0d0;
+            }
+            .pastGame {
+                background-color: #999999;
+            }
+        /*modules*/
+        .topFansTitle {
+            font-size: 2em;
+            width: 100%;
+        }
+        .topFansTable tr td {
+            column-width: 60px;
+        }
+        .topFansTable tr td:nth-child(1) {
+            column-width: 30px;
+        }
+        .button {
+            background-color: #dfe5ed;
+            border: 0.5px solid #85898e;
+            width: 100%;
+            min-height: 46px;
+            font-size: 1.2em;
+        }
+        .button:hover {background-color: #ddd;}
+        .newGamesTab {
+            background-color: #999999;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        .pastGamesTab {
+            background-color: #d0d0d0;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        .newGamesSection {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+        .pastGamesSection {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+        .game ul {
+            list-style-type: none;
+        }
+        /*list styling*/
+        .tab {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .tab li {
+            float: left;
+        }
+        .tab li a:hover {
+            color: #fffc4d;
+        }
+        .tab li a {
+            display: inline-block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .tabContent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    }
+
+    @-webkit-keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+        </style>
+        <script>
+            /* Open Game Tabs*/
+            function openGames(evt, gameType) {
+                var i, tabContent, tabLinks;
+                tabContent = document.getElementsByClassName("tabContent");
+                for (i = 0; i < tabContent.length; i++) {
+                    tabContent[i].style.display = "none";
+                }
+                 tabLinks = document.getElementsByClassName("tabLinks");
+                for (i = 0; i < tabLinks.length; i++) {
+                    tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+                }
+                document.getElementById(gameType).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+    </head>
+    <body class="noPadding noTopOrBottomMargin textStandard">
+        <main class="idolMain container goldFont noPadding noTopOrBottomMargin">
+            <h1 class="floatRight noTopOrBottomMargin idolName">
+                Idol Name
+            </h1>
+            <aside class="topFans floatLeft goldBorder">
+                <h2 class="noPadding noTopOrBottomMargin textCenter textUnderline topFansTitle">
+                    Top Fans
+                </h2>
+                <table class="center noTopOrBottomMargin topFansTable">
+                    <tr>
+                        <th class="position"></th>
+                        <th class="username"></th>
+                        <th class="fanpoints"></th>
+                    </tr>
+                    <tr>
+                        <td class="position1">
+                            1
+                        </td>
+                        <td class="username1">
+                            topfan
+                        </td>
+                        <td class="fanpoints1">
+                            25312
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position2">
+                            2
+                        </td>
+                        <td class="username2">
+                            topfan2
+                        </td>
+                        <td class="fanpoints2">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position3">
+                            3
+                        </td>
+                        <td class="username3">
+                            topfan3
+                        </td>
+                        <td class="fanpoints3">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position4">
+                            4
+                        </td>
+                        <td class="username4">
+                            topfan4
+                        </td>
+                        <td class="fanpoints4">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position5">
+                            5
+                        </td>
+                        <td class="username5">
+                            topfan5
+                        </td>
+                        <td class="fanpoints5">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position6">
+                            6
+                        </td>
+                        <td class="username6">
+                            topfan6
+                        </td>
+                        <td class="fanpoints6">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position7">
+                            7
+                        </td>
+                        <td class="username7">
+                            topfan7
+                        </td>
+                        <td class="fanpoints7">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position8">
+                            8
+                        </td>
+                        <td class="username8">
+                            topfan6
+                        </td>
+                        <td class="fanpoints8">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position9">
+                            9
+                        </td>
+                        <td class="username9">
+                            topfan6
+                        </td>
+                        <td class="fanpoints9">
+                            42132
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="position10">
+                            10
+                        </td>
+                        <td class="username10">
+                            topfan6
+                        </td>
+                        <td class="fanpoints10">
+                            42132
+                        </td>
+                    </tr>
+                </table>
+            </aside>
+            <h2 class="totalFans bottomRight noTopOrBottomMargin">
+                Total Fans: 
+            </h2>
+        </main>
+        <div class="idolContent container noTopOrBottomMargin">
+            <div class="container center idolMarketplace">
+                <div class="inline floatLeft noPadding inline becomeAFan">
+                    <button type="button" class="inline button roundBorders becomeAFanButton">
+                    +Become a Fan
+                    </button>
+                </div>
+                <div class="get321Deal noPadding inline floatRight">
+                    <button type="button" class="inline button roundBorders GetThe321DealButton">
+                        +Get the 321Deal
+                    </button>
+                </div>
+            </div>
+            <div class="center container gamesSection">
+                <ul class="tab gameMenu">
+                    <li>
+                        <a href="#" class="tablinks newGamesTab" onclick="openGames(event, 'newGamesSection')">
+                            New Games
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="tablinks pastGamesTab" onclick="openGames(event, 'pastGamesSection')">
+                            Past Games
+                        </a>
+                    </li>
+                </ul>
+                <div id="newGamesSection" class="tabContent newGamesSection">
+                    <div class="container roundBorders game newGame game1">
+                        <ul class="floatRight gameDetails">
+                            <li class="reward">
+                                reward
+                            </li>
+                            <li class="ends">
+                                ends
+                            </li>
+                        </ul>
+                        <h2 class="gameTitle">
+                            Game Title
+                        </h2>
+                        <p class="description">
+                            Sound submissions. This is a short description of the game.
+                        </p>
+                        <h3 class="inline entries">
+                            Entries
+                        </h3>
+                        <a href="" class=""> All entries</a>
+                        <div class="mainEntries">
+                            <div class="soundEntry11">
+                                <a class="inline playButton11">
+                                    playButton
+                                </a>
+                                <p class="inline entryTitle11">entrytitle1</p>
+                            </div>
+                            <div class="floatLeft soundEntry12">
+                                <a class="inline playButton12">
+                                    playButton
+                                </a>
+                                <p class="inline entryTitle12">entryTitle2</p>
+                            </div>
+                            <div class="Submit noPadding inline floatRight">
+                                <button type="button" class="inline roundBorders button SubmitButton">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container roundBorders game newGame game2">
+                        <ul class="floatRight gameDetails">
+                            <li class="reward">
+                                reward
+                            </li>
+                            <li class="ends">
+                                ends
+                            </li>
+                        </ul>
+                        <h2 class="gameTitle">
+                            Game Title
+                        </h2>
+                        <p class="description">
+                            Video Submissions. This is a short description of the game.
+                        </p>
+                        <h3 class="inline entries">
+                            Entries
+                        </h3>
+                        <a href="" class="inline"> All entries</a>
+                        <div class="videoEntry11">
+                            This is where the video goes
+                        </div>
+                        <div class="Submit noPadding inline floatRight">
+                            <button type="button" class="inline roundBorders button SubmitButton">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="pastGamesSection" class="tabContent pastGamesSection">
+                   <div class="container roundBorders game pastGame game3">
+                        <ul class="floatRight gameDetails">
+                            <li class="reward">
+                                reward
+                            </li>
+                            <li class="ends">
+                                ended
+                            </li>
+                        </ul>
+                        <h2 class="gameTitle">
+                            Game Title
+                        </h2>
+                        <p class="description">
+                            Picture Submissions. This is a short description of the game.
+                        </p>
+                        <h3 class="inline entries">
+                            Entries
+                        </h3>
+                        <a href="" class="inline"> All entries</a>
+                        <div class="PictureEntry11">
+                            <p>
+                                Picture submissions go here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

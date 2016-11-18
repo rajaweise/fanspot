@@ -1,0 +1,16 @@
+<HTML>
+<head>
+</head>
+</body>
+<form>
+    <input type=text>
+    <input type=text>
+    <input type=text>
+    <input type=text>
+    <input type=number>
+    <input type=number>
+    <input type=number>
+    <input type=submit>
+</form>
+<body>
+</HTML>

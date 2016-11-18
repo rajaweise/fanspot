@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+        </script>
+        <script>
+        $(function(){
+                $(".submitLogin").click(function(){
+                    var emailLogin, passwordLogin;
+                    var emailLogin = $(".emailLogin").val();
+                    var passwordLogin = $(".passwordLogin").val();
+                    $.POST(php/login.php,
+                    {
+                        userEmail: emailLogin,
+                        userPassword: passwordLogin
+                    },
+                    function(response){
+                        if (response.result === true) {
+                            window.location(homePageRegisteredUser.html);
+                        } else {
+                            window.location(createIdolPage.html);
+                        }
+                    });
+                });
+    });
+        </script>
+        <style>
+            .header {
+                background-color: background;
+                width: 68.19%;
+                min-width:300px;
+                height: 40px;
+            }
+            .header * {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="inline header">
+            <img>
+            <p>
+                search:
+            </p>
+            <input type="text">
+            <div class="loginSection">
+                <form>
+                <p>
+                    email:
+                </p>
+                <input type="text" class="userEmail">
+                <p>  
+                    password:
+                </p>
+                <input type="text" class="userPassword">
+                <input type="submit" value="login" class=".submitLogin">
+                </form>
+            </div>
+        </header>
+    </body>
+</html>

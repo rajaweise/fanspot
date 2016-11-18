@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Search Title</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            /* positioning */
+                .center {
+                    margin: auto;
+                }
+                .container {
+                    position: relative;
+                    margin: auto;
+                    overflow: hidden;
+                }
+                .inline {
+                    display: inline;
+                }
+                .block {
+                    display: block;
+                }
+                .inlineBlock {
+                    display: inline-block;
+                }
+                .floatLeft {
+                    float: left;
+                }
+                .floatRight {
+                    float: right;
+                }
+            /* layout */
+                .noPadding {
+                    padding: 0px;
+                }
+                .noTopOrBottomMargin {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+                .noMargin {
+                    margin: 0;
+                }
+            /* themes */
+                .roundBorders {
+                    border-radius: 6px;
+                }
+                .textStandard2 {
+                    font-size: 1em;
+                    font-family: Tahoma, Geneva, sans-serif;
+                }
+            /* elements */
+                body {
+                    background-color: #f5f9f9;
+                }
+                main {
+                    width: 68.19%;
+                    min-width:190px;
+                    min-height: 1000px;
+                    height: 100%;
+                    background-color: #d0d9f9;
+                    margin-bottom: 0px;
+                    margin-top: 0px;
+                    padding-left: 10px;
+                }
+                li > * {
+                    margin: 0px;
+                    padding: 0px;
+                }
+                ul > li {
+                    display: inline-block;
+                    background-color: #dfe5ed;
+                    border-radius: 6px;
+                    padding: 3px;
+                    margin: 3px;
+                }
+            /* modules */
+                .unorderedList {
+                    list-style-type: none;
+                }
+                .endList {
+                    display: inline;
+                    padding-left: 20px;
+                    font-weight: bold;
+                    background: none;
+                }
+                .resultsList {
+                    background-color: #ddd;
+                    margin: 10px;
+                    padding: 4px;
+                }
+        </style>
+    </head>
+    <body class="noTopOrBottomMargin textStandard2">
+        <main class="container">  
+            <h1 class="searchTitle">
+                "Search Entry" Search Results
+            </h1>
+            <div class="center idolResultsSection">
+                <h2>
+                    Idol Results
+                </h2>
+                <ul class="roundBorders unorderedList resultsList idolResultsList">
+                    <li>
+                        <a>
+                            <h3>
+                                Idol name goes here
+                            </h3>
+                        </a>
+                        <a href="#">
+                            picture of idol goes here
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <h3>
+                                Idol name goes here
+                            </h3>
+                        </a>
+                        <a href="#">
+                            picture of idol goes here
+                        </a>
+                    </li>
+                    <li class="endList">
+                        <p class="inline">
+                            No more idols match your search
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="center contestResults">
+                <h2>
+                    Contest Results
+                </h2>
+                <ul class="roundBorders unorderedList resultsList contestEntriesList">  
+                    <li>
+                        <a>
+                            <h3>
+                                Contest Title
+                            </h3>
+                        </a>
+                        <a>
+                            Idol Name
+                        </a>
+                        <br>
+                            Contest description
+                    </li>
+                    <li class="endList">
+                        <p class="inline">
+                            No more contests match your search
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="center contestEntryResults">
+                <h2>
+                    Contest Entry Results
+                </h2>
+                <ul class="roundBorders unorderedList resultsList contestEntriesList">  
+                    <li>
+                        <a>
+                            <h3>
+                                Contest Title
+                            </h3>
+                        </a>
+                        <a>
+                            Idol Name
+                        </a>
+                        <br>
+                        <a>
+                            Contest entry
+                        </a>
+                        <br>
+                        <a>
+                            Fan Name
+                        </a>
+                    </li>
+                    <li class="endList">
+                        <p class="inline">
+                            No more contest entries match your search
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </body>
+</html>
